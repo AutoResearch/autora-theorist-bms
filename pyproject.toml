@@ -1,15 +1,16 @@
 [project]
-# UPDATE THIS BEFORE PUBLISHING
-name = "autora-theorist-template"
-description = "AutoRA Theorist Template"
-authors = [{ name = "Max Mustermann", email = "max@mustermann.de" }]
-version = "0.1.0"
+name = "autora-theorist-bms"
+description = "Bayesian Machine Scientist theorist for AutoRA"
+authors = [
+    { name = "Joshua Hewson", email = "joshua_hewson@brown.edu" },
+    { name = "Ben Andrew", email = "benwallaceandrew@gmail.com" }
+]
+dynamic = ["version"]
 
 readme = "README.md"
 license = { text = "MIT License" }
 requires-python = ">=3.8,<4"
 
-# ADD NEW DEPENDENCIES HERE
 dependencies = [
     "autora-core",
     "scikit-learn",
@@ -17,14 +18,17 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "autora-core[dev]"
+    "autora-core[dev]",
+    "autora-synthetic-data"
 ]
 
 [project.urls]
 homepage = "http://www.empiricalresearch.ai"
-repository = "https://github.com/AutoResearch/autora-theorist-template"
+repository = "https://github.com/AutoResearch/autora-theorist-bms"
 documentation = "https://autoresearch.github.io/autora/"
 
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
