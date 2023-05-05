@@ -14,6 +14,8 @@ requires-python = ">=3.8,<4"
 dependencies = [
     "autora-core",
     "scikit-learn",
+    "tqdm",
+    "sympy",
 ]
 
 [project.optional-dependencies]
