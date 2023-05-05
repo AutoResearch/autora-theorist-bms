@@ -2,7 +2,7 @@
 INHERIT: mkdocs/base.yml  # use the shared AutoRA configuration by default
 
 site_name: AutoRA BMS Theorist
-repo_url: 'https://github.com/autoresearch/autora-theorist-bms
+repo_url: 'https://github.com/autoresearch/autora-theorist-bms'
 
 nav:
 - Introduction: 'introduction.md'
