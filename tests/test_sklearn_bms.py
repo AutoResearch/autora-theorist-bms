@@ -1,6 +1,3 @@
-
-import pytest
-
 import warnings
 
 import numpy as np
@@ -11,7 +8,7 @@ from autora.theorist.bms import BMSRegressor
 
 warnings.filterwarnings("ignore")
 
-@pytest.fixture
+
 def generate_noisy_constant_data(
     const: float = 0.5, epsilon: float = 0.01, num: int = 1000, seed: int = 42
 ):
