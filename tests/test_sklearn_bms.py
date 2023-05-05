@@ -1,10 +1,5 @@
-from src.autora.theorist.bms import BMSRegressor
 
-
-def test():
-    theorist = BMSRegressor()
-    assert theorist is not None
-
+import pytest
 
 import warnings
 
@@ -12,10 +7,11 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from autora.theorist.bms import BMSRegressor
 
 warnings.filterwarnings("ignore")
 
-
+@pytest.fixture
 def generate_noisy_constant_data(
     const: float = 0.5, epsilon: float = 0.01, num: int = 1000, seed: int = 42
 ):
