@@ -5,10 +5,10 @@ site_name: AutoRA BMS Theorist
 repo_url: 'https://github.com/autoresearch/autora-theorist-bms'
 
 nav:
-- Introduction: 'introduction.md'
+- Introduction: 'index.md'
 - How it works: 'how_it_works.md'
 - Meta parameters: 'meta_parameters.md'
 - Search space: 'search_space.ipynb'
 - Examples:
-    - Basic usage: 'example.ipynb'
-    - Weber-Fechner Law: 'weber.ipynb'
+    - Basic usage: 'basic-usage.ipynb'
+    - Weber-Fechner Law: 'weber-fechner-example.ipynb'
