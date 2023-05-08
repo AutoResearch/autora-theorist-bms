@@ -9,6 +9,7 @@ nav:
 - How it works: 'how_it_works.md'
 - Meta parameters: 'meta_parameters.md'
 - Search space: 'search_space.ipynb'
+- Quickstart: 'quick-start.md'
 - Examples:
     - Basic usage: 'basic-usage.ipynb'
     - Weber-Fechner Law: 'weber-fechner-example.ipynb'
