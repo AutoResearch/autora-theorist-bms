@@ -5,7 +5,7 @@ site_name: AutoRA BMS Theorist
 repo_url: 'https://github.com/autoresearch/autora-theorist-bms'
 
 nav:
-- Introduction: 'index.md'
+- Home: 'index.md'
 - Quickstart: 'quick-start.md'
 - How It Works: 'how-it-works.md'
 - Meta Parameters: 'meta-parameters.md'
