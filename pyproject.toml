@@ -3,7 +3,6 @@ name = "autora-theorist-bms"
 description = "Bayesian Machine Scientist theorist for AutoRA"
 authors = [
     { name = "Joshua Hewson", email = "joshua_hewson@brown.edu" },
-    { name = "Ben Andrew", email = "benwallaceandrew@gmail.com" }
 ]
 dynamic = ["version"]
 
