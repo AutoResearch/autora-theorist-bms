@@ -32,6 +32,9 @@ from sympy import lambdify, latex, log, sympify
 
 from .prior import get_priors, relu
 
+import warnings
+warnings.filterwarnings("ignore")
+
 _logger = logging.getLogger(__name__)
 
 
