@@ -6,10 +6,9 @@ repo_url: 'https://github.com/autoresearch/autora-theorist-bms'
 
 nav:
 - Introduction: 'index.md'
-- How it works: 'how_it_works.md'
-- Meta parameters: 'meta_parameters.md'
-- Search space: 'search_space.ipynb'
 - Quickstart: 'quick-start.md'
+- How It Works: 'how-it-works.md'
+- Meta Parameters: 'meta-parameters.md'
+- Search Space: 'search-space.ipynb'
 - Examples:
-    - Basic usage: 'basic-usage.ipynb'
-    - Weber-Fechner Law: 'weber-fechner-example.ipynb'
+    - Basic Usage: 'basic-usage.ipynb'
