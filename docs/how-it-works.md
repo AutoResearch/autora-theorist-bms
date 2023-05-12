@@ -1,6 +1,4 @@
-# Bayesian Machine Scientist
-
-## How it works
+# How it works
 
 The Bayesian Machine Scientist (BMS) uses Bayesian inference to search the space of possible equations. The following are the relevant quantities in this Bayesian approach:
 
