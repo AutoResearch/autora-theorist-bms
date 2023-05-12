@@ -31,73 +31,7 @@
     "- **cosh**: The output of the computation $x_j$ is the hyperbolic cosine function applied to its input $x_i$: $x_j = \\cosh(x_i)$.\n",
     "- **tan**: The output of the computation $x_j$ is the tangent function applied to its input $x_i$: $x_j = \\tan(x_i)$.\n",
     "- **tanh**: The output of the computation $x_j$ is the hyperbolic tangent function applied to its input $x_i$: $x_j = \\tanh(x_i)$.\n",
-    "- **\\*\\***: The output of the computation $x_j$ is the first input raised to the power of the second input $x_i,x_{ii}$: $x_j$ = $x_i^{x_{ii}}$.\n",
-    "\n",
-    "## Example"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "collapsed": true
-   },
-   "outputs": [],
-   "source": [
-    "# Uncomment the following line when running on Google Colab\n",
-    "# !pip install autora"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "collapsed": false
-   },
-   "source": [
-    "The following example sets up a search space over four illustrative operations found in Wikipedia pages that are tagged by psychology. These operations are our primitives:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "metadata": {
-    "collapsed": false
-   },
-   "outputs": [],
-   "source": [
-    "\n",
-    "primitives = {\n",
-    "    \"Psychology\": {\n",
-    "        \"addition\": 5.8,\n",
-    "        \"subtraction\": 4.3,\n",
-    "        \"multiplication\": 5.0,\n",
-    "        \"division\": 5.5,\n",
-    "    }\n",
-    "}"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {
-    "collapsed": false
-   },
-   "source": [
-    "We can then pass these primitives directly to the BMS regressor as follows:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "metadata": {
-    "collapsed": false
-   },
-   "outputs": [],
-   "source": [
-    "from autora.skl.bms import BMSRegressor\n",
-    "\n",
-    "bms_estimator = BMSRegressor(\n",
-    "    prior_par=primitives\n",
-    ")\n"
+    "- **\\*\\***: The output of the computation $x_j$ is the first input raised to the power of the second input $x_i,x_{ii}$: $x_j$ = $x_i^{x_{ii}}$."
    ]
   }
  ],
