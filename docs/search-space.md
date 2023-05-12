@@ -7,7 +7,7 @@
     "collapsed": false
    },
    "source": [
-    "# Search space\n",
+    "# Search Space\n",
     "\n",
     "BMS searches the space of operations according to certain parameters to find the best model. As such, the search space is defined by the set of operations that can be applied in each computation step of the model. These operations are also referred to as *primitives*. We can select from the following set of primitives:\n",
     "\n",
