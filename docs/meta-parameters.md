@@ -1,6 +1,4 @@
-# Bayesian Machine Scientist
-
-## Meta-Parameters
+# Meta-Parameters
 
 Meta-parameters are used to control the search space and the search algorithm. This section provides a basic overview of these parameters along with a description of their effects. 
 
