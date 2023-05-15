@@ -1,4 +1,4 @@
-# AutoRA BMS Theorist
+# Bayesian Machine Scientist
 
 `autora-theorist-bms` is a Python module built on AutoRA that can be used to discover equations that fit data.
 
