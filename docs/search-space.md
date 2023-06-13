@@ -6,7 +6,7 @@ BMS searches the space of operations according to certain parameters to find the
 - **\+**: The output of the computation $x_j$ is the sum over its two inputs $x_i, x_{ii}$: $x_j = x_i + x_{ii}$.
 - **\-**: The output of the computation $x_j$ is the respective difference between its inputs $x_i, x_{ii}$: $x_j = x_i - x_{ii}$.
 - **\***: The output of the computation $x_j$ is the product over its two inputs $x_i, x_{ii}$: $x_j = x_i * x_{ii}$.
-- **\/**: The output of the computation $x_j$ is the respective quotient between its inputs $x_i, x_{ii}$: $x_j = x_i / x_{ii}$.
+- **\\/**: The output of the computation $x_j$ is the respective quotient between its inputs $x_i, x_{ii}$: $x_j = x_i / x_{ii}$.
 - **abs**: The output of the computation $x_j$ is the absolute value of its input $x_i$: $x_j = |(x_i)|$.
 - **relu**: The output of the computation $x_j$ is a rectified linear function applied to its input $x_i$: $x_j = \max(0, x_i)$.
 - **exp**: The output of the computation $x_j$ is the natural exponential function applied to its input $x_i$: $x_j = \exp(x_i)$.
