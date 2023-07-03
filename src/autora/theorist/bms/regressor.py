@@ -174,6 +174,12 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
 
         utils.present_results(self.model_, self.loss_, self.cache_)
 
+    def repr(self):
+        return self.model_.__repr__()
+
+    def latex(self):
+        return self.model_.latex()
+
     def add_primitive(self, op: Callable):
         self.custom_ops.update({op.__name__: op})
         self.ops.update({op.__name__: len(signature(op).parameters)})
