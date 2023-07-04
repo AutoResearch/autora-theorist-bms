@@ -63,27 +63,3 @@ def present_results(model: Tree, model_len: float, desc_len: List[float]) -> Non
     plt.ylabel("Description length", fontsize=14)
     plt.title("MDL model: $%s$" % model.latex())
     plt.show()
-
-
-def predict(model: Tree, x: pd.DataFrame, y: pd.DataFrame) -> dict:
-    """
-    Maps independent variable data onto expected dependent variable data
-
-    Args:
-        model: The equation / function that best maps x onto y
-        x: The independent variables of the data
-        y: The dependent variable of the data
-
-    Returns: Predicted values for y given x and the model as trained
-    """
-    plt.figure(figsize=(6, 6))
-    plt.scatter(model.predict(x), y)
-
-    all_y = np.append(y, model.predict(x))
-    y_range = all_y.min().item(), all_y.max().item()
-    plt.plot(y_range, y_range)
-
-    plt.xlabel("MDL model predictions", fontsize=14)
-    plt.ylabel("Actual values", fontsize=14)
-    plt.show()
-    return model.predict(x)
