@@ -701,6 +701,10 @@ class Tree:
                 if verbose:
                     print("> Cannot calculate SSE for %s: inf" % self, file=sys.stderr)
                 self.sse[ds] = np.inf
+            except TypeError:
+                if verbose:
+                    print("Complex-valued parameters are invalid")
+                self.sse[ds] = np.inf
 
         # Done
         return self.sse
@@ -725,11 +729,12 @@ class Tree:
         k = 1 + len(parameters)
         BIC = 0.0
         for ds in self.y:
-            n = len(self.y[ds])
-            BIC += (k - n) * np.log(n) + n * (np.log(2.0 * np.pi) + log(sse[ds]) + 1)
-        for ds in self.y:
             if sse[ds] == 0.0:
                 BIC = -np.inf
+                break
+            else:
+                n = len(self.y[ds])
+                BIC += (k - n) * np.log(n) + n * (np.log(2.0 * np.pi) + log(sse[ds]) + 1)
         if reset:
             self.bic = BIC
         return BIC
@@ -790,6 +795,8 @@ class Tree:
         canonical = self.canonical(verbose=verbose)
         try:  # We've seen this canonical before!
             rep, rep_energy, rep_par_values = self.representative[canonical]
+        except TypeError:
+            return -1  # Complex-valued parameters are invalid
         except KeyError:  # Never seen this canonical formula before:
             # save it and return 1
             self.get_bic(reset=True, fit=True, verbose=verbose)
