@@ -33,7 +33,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
 
     Examples:
 
-        >>> from autora.theorist.bms import Parallel, utils
+        >>> from autora.theorist.bms import Parallel
         >>> import numpy as np
         >>> num_samples = 1000
         >>> X = np.linspace(start=0, stop=1, num=num_samples).reshape(-1, 1)
