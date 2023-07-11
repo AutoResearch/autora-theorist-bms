@@ -174,8 +174,17 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
 
         utils.present_results(self.model_, self.loss_, self.cache_)
 
-    def repr(self):
-        return self.model_.__repr__()
+    def __repr__(self):
+        return self.repr()
+
+    def repr(self, decimals=2):
+        model_str = self.model_.__repr__()
+        parameter_names = self.model_.parameters
+        parameter_values = self.model_.par_values
+        for name in parameter_names:
+            value = parameter_values["d0"][name]
+            model_str = model_str.replace(name, str(np.round(value, decimals=decimals)))
+        return model_str
 
     def latex(self):
         return self.model_.latex()
