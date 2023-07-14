@@ -44,9 +44,8 @@ def __get_prior(prior_name):
             "Nopi_+": 5.808163661224514,
             "Nopi_*": 5.002213595420244,
             "Nopi_fac": 10.0,
-            "Nopi2_*": 1.0,
-            "Nopi_sig": 1.0,  # arbitrarily set for now
-            "Nopi_relu": 1.0,  # arbitrarily set for now
+            "Nopi_sig": 10.0,  # arbitrarily set for now
+            "Nopi_relu": 10.0,  # arbitrarily set for now
         },
     }
     assert prior_dict[prior_name] is not None, "prior key not recognized"
