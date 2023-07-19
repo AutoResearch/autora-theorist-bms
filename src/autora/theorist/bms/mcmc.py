@@ -33,9 +33,10 @@ from sympy import lambdify, latex, log, sympify
 from .prior import get_priors, relu
 
 import warnings
-warnings.filterwarnings("ignore")
 
 _logger = logging.getLogger(__name__)
+
+warnings.filterwarnings("ignore")
 
 
 class Node:
@@ -793,20 +794,21 @@ class Tree:
         """
         # Check for canonical representative
         canonical = self.canonical(verbose=verbose)
-        try:  # We've seen this canonical before!
-            rep, rep_energy, rep_par_values = self.representative[canonical]
+        try:
+            try:  # We've seen this canonical before!
+                rep, rep_energy, rep_par_values = self.representative[canonical]
+            except KeyError:  # Never seen this canonical formula before:
+                # save it and return 1
+                self.get_bic(reset=True, fit=True, verbose=verbose)
+                new_energy = self.get_energy(bic=False, verbose=verbose)
+                self.representative[canonical] = (
+                    str(self),
+                    new_energy,
+                    deepcopy(self.par_values),
+                )
+                return 1
         except TypeError:
-            return -1  # Complex-valued parameters are invalid
-        except KeyError:  # Never seen this canonical formula before:
-            # save it and return 1
-            self.get_bic(reset=True, fit=True, verbose=verbose)
-            new_energy = self.get_energy(bic=False, verbose=verbose)
-            self.representative[canonical] = (
-                str(self),
-                new_energy,
-                deepcopy(self.par_values),
-            )
-            return 1
+                return -1  # Complex-valued parameters are invalid
 
         # If we've seen this canonical before, check if the
         # representative needs to be updated
