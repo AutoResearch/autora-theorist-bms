@@ -49,6 +49,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
         model_: represents the best-fit model
         loss_: represents loss associated with best-fit model
         cache_: record of loss_ over model fitting epochs
+        temp_: temperature of model_
     """
 
     def __init__(
@@ -72,6 +73,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
         self.X_: Optional[np.ndarray] = None
         self.y_: Optional[np.ndarray] = None
         self.model_: Tree = Tree()
+        self.temp_: float = 0.0
         self.models_: List[Tree] = [Tree()]
         self.loss_: float = np.inf
         self.cache_: List = []
@@ -185,6 +187,15 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
             value = parameter_values["d0"][name]
             model_str = model_str.replace(name, str(np.round(value, decimals=decimals)))
         return model_str
+
+    def get_models(self):
+        model_list = []
+        for idx, tree in enumerate(self.models_):
+            bms_model = BMSRegressor()
+            bms_model.model_ = tree
+            bms_model.temp_ = self.ts[idx]
+            model_list.append(bms_model)
+        return model_list
 
     def latex(self):
         return self.model_.latex()
