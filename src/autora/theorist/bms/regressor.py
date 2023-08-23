@@ -194,7 +194,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
             bms_model = BMSRegressor()
             bms_model.model_ = tree
             bms_model.temp_ = self.ts[idx]
-            bms_model.variables = list(X.columns) if hasattr(X, "columns") else ["X%d" % i for i in range(X.shape[1])]
+            bms_model.variables = list(self.X_.columns) if hasattr(self.X_, "columns") else ["X%d" % i for i in range(self.X_.shape[1])]
             model_list.append(bms_model)
         return model_list
 
