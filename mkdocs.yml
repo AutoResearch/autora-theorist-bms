@@ -12,3 +12,4 @@ nav:
 - Search Space: 'search-space.md'
 - Examples:
     - Basic Usage: 'Basic Usage.ipynb'
+    - Tutorial: 'Tutorial.ipynb'
