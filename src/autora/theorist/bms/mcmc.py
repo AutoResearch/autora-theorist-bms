@@ -17,6 +17,7 @@ Module constants:
 import json
 import logging
 import sys
+import warnings
 from copy import deepcopy
 from inspect import signature
 from itertools import permutations, product
@@ -32,7 +33,6 @@ from sympy import lambdify, latex, log, sympify
 
 from .prior import get_priors, relu
 
-import warnings
 warnings.filterwarnings("ignore")
 
 _logger = logging.getLogger(__name__)
@@ -622,7 +622,7 @@ class Tree:
                 "sig": scipy.special.expit,
                 "relu": relu,
             },
-            **self.custom_ops
+            **self.custom_ops,
         )
         try:
             flam = lambdify(
@@ -734,7 +734,9 @@ class Tree:
                 break
             else:
                 n = len(self.y[ds])
-                BIC += (k - n) * np.log(n) + n * (np.log(2.0 * np.pi) + log(sse[ds]) + 1)
+                BIC += (k - n) * np.log(n) + n * (
+                    np.log(2.0 * np.pi) + log(sse[ds]) + 1
+                )
         if reset:
             self.bic = BIC
         return BIC
@@ -922,7 +924,6 @@ class Tree:
         par_valuesNew = deepcopy(self.par_values)
 
         if target.value != new:
-
             # Check if the new tree is canonically acceptable.
             old = target.value
             old_bic, old_sse, old_energy = self.bic, deepcopy(self.sse), self.E
@@ -1393,7 +1394,7 @@ class Tree:
                         "sig": scipy.special.expit,
                         "relu": relu,
                     },
-                    **self.custom_ops
+                    **self.custom_ops,
                 ),
             ],
         )
