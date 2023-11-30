@@ -130,7 +130,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
             ops=self.ops,
             custom_ops=self.custom_ops,
             root=root,
-            seed=random_state,
+            random_state=random_state,
         )
         self.model_, self.loss_, self.cache_ = utils.run(self.pms, self.epochs)
         self.models_ = list(self.pms.trees.values())
