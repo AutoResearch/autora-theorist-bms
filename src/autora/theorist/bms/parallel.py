@@ -1,6 +1,6 @@
 import sys
 from copy import deepcopy
-from random import randint, random
+from random import randint, random, seed
 from typing import Optional, Tuple
 
 from numpy import exp
@@ -32,7 +32,7 @@ class Parallel:
         x=None,
         y=None,
         root=None,
-        seed=None,
+        random_state=None,
     ) -> None:
         """
         Initialises Parallel Machine Scientist
@@ -48,6 +48,8 @@ class Parallel:
             y: dependent variable of dataset
             root: fixed root of the tree
         """
+        if random_state is not None:
+            seed(random_state)
         self.root = root
         # All trees are initialized to the same tree but with different BT
         Ts.sort()
@@ -65,7 +67,7 @@ class Parallel:
                 root_value=root.__name__ if root is not None else None,
                 fixed_root=True if root is not None else False,
                 custom_ops=custom_ops,
-                seed_value=seed,
+                random_state=random_state,
             )
         }
         self.t1 = self.trees["1.0"]
@@ -82,7 +84,7 @@ class Parallel:
                 custom_ops=custom_ops,
                 max_size=max_size,
                 BT=float(BT),
-                seed_value=seed,
+                random_state=random_state,
             )
             self.trees[BT] = treetmp
             # Share fitted parameters and representative with other trees

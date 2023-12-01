@@ -86,7 +86,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
         num_param: int = 1,
         root=None,
         custom_ops=None,
-        seed=None,
+        random_state=None,
     ) -> BMSRegressor:
         """
         Runs the optimization for a given set of `X`s and `y`s.
@@ -130,7 +130,7 @@ class BMSRegressor(BaseEstimator, RegressorMixin):
             ops=self.ops,
             custom_ops=self.custom_ops,
             root=root,
-            seed=seed,
+            random_state=random_state,
         )
         self.model_, self.loss_, self.cache_ = utils.run(self.pms, self.epochs)
         self.models_ = list(self.pms.trees.values())
